@@ -1,0 +1,38 @@
+#unity-loading-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+#unity-logo {
+  width: 100px;
+  height: 100px;
+  background-image: url('TemplateData/logo.png'); /* Add your logo here */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+#unity-progress-bar-empty {
+  width: 20%;
+  height: 20px;
+  background-color: #555;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#unity-progress-bar-full {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.3s;
+}

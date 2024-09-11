@@ -1,0 +1,238 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent body overflow */
+}
+
+#unityContainer {
+  position: fixed; /* Change to fixed to prevent it from being pushed up */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+/* Style the chat container */
+#chat-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+#chat-container.minimized {
+  display: none;
+}
+
+/* History button styles */
+.history-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.history-button img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Style individual chat messages */
+.chat-message {
+  margin-bottom: 10px;
+  color: #fff;
+  word-wrap: break-word;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+/* Style the input container */
+#input-container {
+  position: fixed; /* Ensure it is fixed to the viewport */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Adjust width to fit the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  z-index: 1000; /* Ensure it is on top */
+}
+
+/* Style the setting section */
+#setting-section {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 7px;
+  border-radius: 10px;
+}
+
+
+
+/* Player name input field styles */
+.player-name-input {
+  width: 150px;
+  font-size: 16px;
+  border: 2px solid #61dafb;
+  border-radius: 20px;
+  outline: none;
+  text-align: center; /* Center the text inside the input field */
+}
+
+.player-name-input:focus {
+  border-color: #21a1f1;
+}
+
+/* Chat input field styles */
+.input-field {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #61dafb;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  margin-right: 10px; /* Add some space between the input and button */
+}
+
+.input-field:focus {
+  border-color: #21a1f1;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #61dafb;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #21a1f1;
+}
+
+/* Minimize button styles */
+.minimize-button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Minimized title styles */
+.minimized-title {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin: auto; /* Center the text inside the minimized container */
+}
+
+/* Emoji container styles */
+.emoji-container {
+  position: relative;
+  display: inline-block;
+}
+
+.emoji-toggle-button {
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.emoji-menu {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.emoji-button {
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 768px) {
+  #chat-container {
+    position: fixed; /* Change to fixed to position it at the bottom */
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 350px;
+    width: 95%; /* Adjust width to fit the screen */
+    display: flex;
+    flex-direction: column;
+    background: rgba(39, 19, 88, 0.5);
+    padding: 10px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+  }
+  
+  .chat-history {
+    font-size: 0.7em;
+  }
+
+  .input-field {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  .button {
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+
+  .player-name-input {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  #input-container .button,
+  #input-container .emoji-toggle-button {
+    display: none; /* Hide the send and emoji buttons on mobile */
+  }
+
+  .mobile-only .button {
+    display: none; /* Hide the Set button on mobile */
+  }
+}
